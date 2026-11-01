@@ -1,0 +1,15 @@
+# 中间产物：可删可重建
+build/
+.scratch/
+
+# 检索索引：由 index_build.py 生成
+kb/index/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# 编辑器
+.vscode/
+.idea/
