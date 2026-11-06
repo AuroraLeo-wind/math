@@ -26,6 +26,8 @@
 - 平台：GitHub
 - 远程仓库：`AuroraLeo-wind/math` — 已配置为 `origin`
   （`git@github.com:AuroraLeo-wind/math.git`，SSH，密钥 `~/.ssh/id_ed25519_github`）。
-- CLI：`gh` — 本机当前未安装。首次使用前需安装 GitHub CLI 并 `gh auth login`；
-  登录后 `gh` 在仓库内自动推断目标，无需额外参数。
+- CLI：`gh` 已安装（`C:\Program Files\GitHub CLI\gh.exe`），但 `hosts.yml` 里的 `oauth_token` 为空，
+  任何 API 调用都会被拒（HTTP 401）。**恢复认证前，`gh` 不可用**；此时 Issue 的读写走 GitHub Web
+  （浏览器里已有登录会话），只读校验可用未认证 REST（`api.github.com`，公开仓库 60 次/小时）。
+  修复：`gh auth login -h github.com`，之后 `gh` 在仓库内自动推断目标，无需额外参数。
 - 标签词汇见 `docs/agents/triage-labels.md`；若仓库尚无这些标签，`triage` 首次应用时创建。
